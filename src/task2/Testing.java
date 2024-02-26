@@ -1,5 +1,11 @@
+package task2;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import task2.StringToInt;
+import task3.ElectronicDevice;
+import task3.IllegalWattException;
+
 public class Testing {
     @Test
     public void testParseInts1(){
@@ -18,21 +24,5 @@ public class Testing {
         int[]actual = StringToInt.parseInts("3", null, "17");
         int[]expected = {3,0,17};
         Assert.assertEquals(actual, expected);
-    }
-    @Test
-    public void testSetPower(){
-        String exceptionMessage = null;
-        try{
-            ElectronicDevice ed = new ElectronicDevice();
-            ed.setPower(-50);
-        }catch(IllegalWattException e){
-           exceptionMessage=e.getMessage();
-        }
-        Assert.assertEquals(exceptionMessage, "power can not be negative!");
-    }
-    @Test(expectedExceptions = IllegalWattException.class)
-    public void testSetPower2(){
-        ElectronicDevice ed = new ElectronicDevice();
-        ed.setPower(-50);
     }
 }

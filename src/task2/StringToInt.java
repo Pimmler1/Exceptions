@@ -1,3 +1,5 @@
+package task2;
+
 public class StringToInt {
     /**
      * converts an array of strings to an array of integers

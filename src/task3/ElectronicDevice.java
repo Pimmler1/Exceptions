@@ -1,3 +1,5 @@
+package task3;
+
 public class ElectronicDevice {
     private String name;
     private int power;
